@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#061817" />
+    <title>GuideSight — audio guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <a class="brand" href="#" aria-label="GuideSight home"><span class="brand-mark">◎</span><span>Guide<span>Sight</span></span></a>
+        <div class="status"><span class="pulse"></span> CAMERA READY</div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR AUDIO COMPANION</p>
+        <h1 id="page-title">See the world,<br /><em>through sound.</em></h1>
+        <p class="lead">GuideSight recognizes what is around you and speaks clear, calm guidance to help you move with confidence.</p>
+      </section>
+
+      <section class="scanner-card" aria-label="Live camera scanner">
+        <div class="camera-view">
+          <video id="camera" autoplay playsinline muted aria-label="Live camera preview"></video>
+          <div class="view-overlay"></div>
+          <div class="corner top-left"></div><div class="corner top-right"></div><div class="corner bottom-left"></div><div class="corner bottom-right"></div>
+          <div class="scan-line"></div>
+          <div id="cameraPlaceholder" class="camera-placeholder"><span>◉</span><p>Camera preview</p></div>
+          <div class="live-label"><span></span> LIVE SCANNING</div>
+          <div class="guidance-bubble" id="guidanceBubble"><span class="sound-icon">)))</span><span id="guidanceText">Ready to look around</span></div>
+        </div>
+        <aside class="scan-panel">
+          <div class="panel-heading"><p>WHAT I SEE</p><button id="muteButton" class="icon-button" aria-label="Mute narration">⌁</button></div>
+          <div id="detections" class="detections" aria-live="polite">
+            <div class="empty-state"><span>⌁</span><p>Start the camera<br />to begin scanning</p></div>
+          </div>
+          <div class="scan-action"><button id="scanButton" class="primary-button"><span class="play">▶</span> Start scanning</button><p id="scanNote">Uses your camera privately on this device</p></div>
+        </aside>
+      </section>
+
+      <section class="how-it-works" aria-labelledby="how-title">
+        <div><p class="eyebrow">SIMPLE BY DESIGN</p><h2 id="how-title">A little more awareness,<br />every step of the way.</h2></div>
+        <div class="steps">
+          <article><span class="step-number">01</span><h3>Point your camera</h3><p>Hold your phone naturally in the direction you’re walking.</p></article>
+          <article><span class="step-number">02</span><h3>Hear what matters</h3><p>Objects and possible obstacles are described aloud as they appear.</p></article>
+          <article><span class="step-number">03</span><h3>Move with ease</h3><p>Use the spoken cues to make confident choices, your way.</p></article>
+        </div>
+      </section>
+      <footer><span>GUIDESIGHT</span><span>PRIVATE · ON-DEVICE · MADE FOR MOVEMENT</span></footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
